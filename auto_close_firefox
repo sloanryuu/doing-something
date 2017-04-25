@@ -8,13 +8,13 @@ if file_number != 1:
 	if 'auto' not in tmp_2:
 		pass
 	else:
-		tmp_3 = os.popen('ps -au').readlines()
+		tmp_3 = os.popen('ps -aux').readlines()
 		ps_list = [each.split() for each in tmp_3]
 		list_command = [each[10] for each in ps_list]
 		list_pid = [each[1] for each in ps_list]
 		i = 0
 		for each in list_command:
-			if 'tmux' in each:
+			if 'firefox' in each:
 				print(list_pid[i])
 			else:
 				i = i+1
